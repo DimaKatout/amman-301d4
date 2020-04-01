@@ -16,16 +16,33 @@ $('ul').on('click',function(){
 //     console.log($(this).text());
 // })
 
-$.get('./people.json')
-.then (data => {
-    // console.log(data);
-    data.forEach((val,idx) => {
-        // console.log(val);
-        let person = new Person(val.name);
-        // console.log(person);
+// $.get('./people.json')
+// .then (data => {
+//     // console.log(data);
+//     data.forEach((val,idx) => {
+//         // console.log(val);
+//         let person = new Person(val.name);
+//         // console.log(person);
+//         person.render();
+//     });
+// });
+
+
+
+//////////////////AJAX
+const ajaxSettings = {
+    method: 'get',
+    dataType: 'json'
+  };
+  $.ajax('./people.json', ajaxSettings)
+    .then(data => {
+      data.forEach((value, idx) => {
+        let person = new Person(value.name);
         person.render();
+      })
     });
-});
+  
+
 
 function Person(name) {
     this.name = name;
