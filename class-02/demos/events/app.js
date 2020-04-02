@@ -34,6 +34,7 @@ const ajaxSettings = {
     method: 'get',
     dataType: 'json'
   };
+  
   $.ajax('./people.json', ajaxSettings)
     .then(data => {
       data.forEach((value, idx) => {
