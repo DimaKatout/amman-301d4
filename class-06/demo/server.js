@@ -52,6 +52,7 @@ function Location (city,geoData) {
     // this.longitude = geoData.results[0].geometry.location.lng;
 }
 
+
 // localhost:3000/anything
 server.use('*', (req, res) => {
     res.status(404).send('NOT FOUND');
